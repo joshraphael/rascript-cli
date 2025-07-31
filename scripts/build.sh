@@ -1,0 +1,21 @@
+#!/bin/bash
+
+if [[ $1 != @(linux-x64|win-x64|osx-x64|osx-arm64) ]]; then
+    echo "Invalid architecture: $1"
+    exit 1
+fi
+
+export PREFIX=""
+
+if [[ ${GITHUB_REF_NAME} != "" ]]; then
+    PREFIX="_$GITHUB_REF_NAME"
+fi
+
+export EXTENSION=""
+
+if [[ $1 == "win-x64" ]]; then
+    EXTENSION=".exe"
+fi
+
+dotnet publish RATools/Source/rascript-cli/rascript-cli.csproj -r $1 -p:PublishSingleFile=true --self-contained true
+mv RATools/bin/Release/net8.0/$1/publish/rascript-cli${EXTENSION} RATools/bin/Release/net8.0/$1/publish/rascript-cli${PREFIX}_$1${EXTENSION}
