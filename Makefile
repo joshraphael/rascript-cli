@@ -1,5 +1,5 @@
 SHELL := /bin/bash
-RATOOLS_VERSION :=  v1.14.1
+RATOOLS_VERSION :=  v1.15.0
 
 reset:
 	rm -rf RATools/ && git submodule update --init --recursive && cd RATools/ && git checkout tags/${RATOOLS_VERSION}
