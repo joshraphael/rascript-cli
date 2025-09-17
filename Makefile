@@ -1,9 +1,9 @@
 SHELL := /bin/bash
-RATOOLS_VERSION := tags/v1.15.2
+RATOOLS_VERSION := tags/v1.16.0
 TARGET_FRAMEWORK := net8.0
 
 reset:
-	rm -rf RATools/ && git submodule update --init --recursive && cd RATools/ && git fetch && git checkout ${RATOOLS_VERSION} && cd .. && git submodule update --init --recursive
+	rm -rf RATools/ && git submodule update --init --recursive && cd RATools/ && git fetch && git checkout ${RATOOLS_VERSION} && git submodule update --init --recursive
 
 modify:
 	sed -i -E 's|<TargetFramework>.*</TargetFramework>|<TargetFramework>${TARGET_FRAMEWORK}</TargetFramework>|' RATools/Source/rascript-cli/rascript-cli.csproj
