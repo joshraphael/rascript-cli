@@ -2,7 +2,7 @@ SHELL := /bin/bash
 RATOOLS_VERSION := tags/v1.15.2
 
 reset:
-	rm -rf RATools/ && git submodule update --init --recursive && cd RATools/ && git checkout ${RATOOLS_VERSION}
+	rm -rf RATools/ && git submodule update --init --recursive && cd RATools/ && git fetch && git checkout ${RATOOLS_VERSION} && cd .. && git submodule update --init --recursive
 
 modify:
 	sed -i -E 's|<TargetFramework>.*</TargetFramework>|<TargetFramework>net8.0</TargetFramework>|' RATools/Source/rascript-cli/rascript-cli.csproj
@@ -11,13 +11,19 @@ modify:
 run: reset modify
 	dotnet run --project RATools/Source/rascript-cli/rascript-cli.csproj
 
-build: reset modify build-linux-x64 build-win-x64 build-osx-x64 build-osx-arm64
+build: reset modify build-linux-x64 build-win-x86 build-win-x64 build-win-arm64 build-osx-x64 build-osx-arm64
 
 build-linux-x64:
 	./scripts/build.sh linux-x64
 
+build-win-x86:
+	./scripts/build.sh win-x86
+
 build-win-x64:
 	./scripts/build.sh win-x64
+
+build-win-arm64:
+	./scripts/build.sh win-arm64
 
 build-osx-x64:
 	./scripts/build.sh osx-x64

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if [[ $1 != @(linux-x64|win-x64|osx-x64|osx-arm64) ]]; then
+if [[ $1 != @(linux-x64|win-x86|win-x64|win-arm64|osx-x64|osx-arm64) ]]; then
     echo "Invalid architecture: $1"
     exit 1
 fi
@@ -13,7 +13,7 @@ fi
 
 export EXTENSION=""
 
-if [[ $1 == "win-x64" ]]; then
+if [[ $1 == "win-x86" || $1 == "win-x64" || $1 == "win-arm64" ]]; then
     EXTENSION=".exe"
 fi
 

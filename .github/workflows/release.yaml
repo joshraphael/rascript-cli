@@ -24,8 +24,12 @@ jobs:
         run: |
           cp RATools/bin/Release/net8.0/linux-x64/publish/rascript-cli_${{ github.ref_name }}_linux-x64 .
           zip rascript-cli_${{ github.ref_name }}_linux-x64.zip rascript-cli_${{ github.ref_name }}_linux-x64
+          cp RATools/bin/Release/net8.0/win-x86/publish/rascript-cli_${{ github.ref_name }}_win-x86.exe .
+          zip rascript-cli_${{ github.ref_name }}_win-x86.zip rascript-cli_${{ github.ref_name }}_win-x86.exe
           cp RATools/bin/Release/net8.0/win-x64/publish/rascript-cli_${{ github.ref_name }}_win-x64.exe .
           zip rascript-cli_${{ github.ref_name }}_win-x64.zip rascript-cli_${{ github.ref_name }}_win-x64.exe
+          cp RATools/bin/Release/net8.0/win-arm64/publish/rascript-cli_${{ github.ref_name }}_win-arm64.exe .
+          zip rascript-cli_${{ github.ref_name }}_win-arm64.zip rascript-cli_${{ github.ref_name }}_win-arm64.exe
           cp RATools/bin/Release/net8.0/osx-x64/publish/rascript-cli_${{ github.ref_name }}_osx-x64 .
           zip rascript-cli_${{ github.ref_name }}_osx-x64.zip rascript-cli_${{ github.ref_name }}_osx-x64
           cp RATools/bin/Release/net8.0/osx-arm64/publish/rascript-cli_${{ github.ref_name }}_osx-arm64 .
