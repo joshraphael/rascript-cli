@@ -1,5 +1,5 @@
 SHELL := /bin/bash
-RATOOLS_VERSION := tags/v1.16.0
+RATOOLS_VERSION := tags/v1.16.1
 TARGET_FRAMEWORK := net8.0
 
 reset:
