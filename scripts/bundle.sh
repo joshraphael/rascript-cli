@@ -29,5 +29,5 @@ for build in "${builds[@]}"; do
 done
 
 cd builds/${3}
-zip ${RELEASE_VERSION}_rascript-cli_${3}.zip ${FILES}
-mv ${RELEASE_VERSION}_rascript-cli_${3}.zip ../archives
+zip rascript-cli_${3}-${RELEASE_VERSION}.zip ${FILES}
+mv rascript-cli_${3}-${RELEASE_VERSION}.zip ../archives

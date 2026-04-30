@@ -21,6 +21,7 @@ bundle:
 	mkdir -p builds/archives
 	./scripts/bundle.sh net6.0 ${DOTNET_VERSION} v1.13.0
 	./scripts/bundle.sh net6.0 ${DOTNET_VERSION} v1.14.0
+	./scripts/bundle.sh net6.0 ${DOTNET_VERSION} v1.14.1
 	./scripts/bundle.sh net6.0 ${DOTNET_VERSION} v1.15.0
 	./scripts/bundle.sh net6.0 ${DOTNET_VERSION} v1.15.1
 	./scripts/bundle.sh net6.0 ${DOTNET_VERSION} v1.15.2
