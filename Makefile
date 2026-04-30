@@ -17,6 +17,7 @@ run: reset modify
 build: build-linux-x64 build-win-x86 build-win-x64 build-win-arm64 build-osx-x64 build-osx-arm64
 
 bundle:
+	rm -rf builds/
 	./scripts/bundle.sh net6.0 ${DOTNET_VERSION} v1.13.0
 	./scripts/bundle.sh net6.0 ${DOTNET_VERSION} v1.14.0
 	./scripts/bundle.sh net6.0 ${DOTNET_VERSION} v1.15.0

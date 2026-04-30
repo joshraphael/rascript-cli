@@ -9,9 +9,24 @@ builds=(linux-x64 win-x86 win-x64 win-arm64 osx-x64 osx-arm64)
 export SOURCE_DOTNET_VERSION=$1
 export TARGET_DOTNET_VERSION=$2
 export RATOOLS_VERSION=tags/$3
-rm -rf builds/$RATOOLS_VERSION
-mkdir -p builds/$RATOOLS_VERSION
 
+export RELEASE_VERSION="dev"
+if [[ ${GITHUB_REF_NAME} != "" ]]; then
+    RELEASE_VERSION="$GITHUB_REF_NAME"
+fi
+
+rm -rf builds/$3
+mkdir -p builds/$3
+
+export FILES=""
 for build in "${builds[@]}"; do
     bash ./scripts/build.sh $build $SOURCE_DOTNET_VERSION $TARGET_DOTNET_VERSION $RATOOLS_VERSION
+    export EXTENSION=""
+    if [[ $build == "win-x86" || $build == "win-x64" || $build == "win-arm64" ]]; then
+        EXTENSION=".exe"
+    fi
+    FILES+="rascript-cli_${3}_${build}${EXTENSION} "
 done
+
+cd builds/${3}
+zip ${RELEASE_VERSION}_rascript-cli_${3}.zip ${FILES}
