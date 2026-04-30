@@ -23,5 +23,6 @@ jobs:
       - name: Release
         uses: softprops/action-gh-release@v2
         with:
+          working_directory: builds
           body: Release tag ${{ github.ref_name }}
-          files: builds/archives/*
+          files: archives/*.zip
