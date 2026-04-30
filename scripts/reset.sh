@@ -1,7 +1,8 @@
 #!/bin/bash
 
-rm -rf RATools/
-git clone https://github.com/Jamiras/RATools.git
+if [ ! -d "RATools/" ]; then
+    git clone https://github.com/Jamiras/RATools.git
+fi
 cd RATools/
 git fetch
 git checkout ${1}
