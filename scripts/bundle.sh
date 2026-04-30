@@ -30,3 +30,4 @@ done
 
 cd builds/${3}
 zip ${RELEASE_VERSION}_rascript-cli_${3}.zip ${FILES}
+mv ${RELEASE_VERSION}_rascript-cli_${3}.zip ../archives
