@@ -4,8 +4,8 @@ This is a build repo to be able to distribute [RATools](https://github.com/Jamir
 
 ## Motivation
 
-rascript-cli was introduced in version [v1.13.0](https://github.com/Jamiras/RATools/releases/tag/v1.13.0) This repo aims to provide binaries for each version following for Linux, Windows, and Mac. Tags on this repo will correspond to the tagged version of RATools being build to keep in sync.
+rascript-cli was introduced in version [v1.13.0](https://github.com/Jamiras/RATools/releases/tag/v1.13.0) This repo aims to provide binaries for each version following for Linux, Windows, and Mac.
 
 ## Getting Started
 
-Navigate to the [Releases](https://github.com/joshraphael/rascript-cli/releases) page to see all tagged versions of the binary. Chose the tag and operating system you use and run the program from a terminal.
+Navigate to the latest [release](https://github.com/joshraphael/rascript-cli/releases/latest) page to see all available versions of the binary. Choose the tag and operating system you use and run the program from a terminal.
