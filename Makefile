@@ -1,14 +1,15 @@
 SHELL := /bin/bash
 DOTNET_VERSION := net8.0
-LATEST_RATOOLS_VERSION := v1.17.0
-TARGET_FRAMEWORK := net8.0
-SOURCE_FRAMEWORK := net10.0
+
+## Manual build vars
+MANUAL_BUILD_RATOOLS_VERSION := tags/v1.17.0
+MANUAL_BUILD_DOTNET_SOURCE_VERSION := net10.0
 
 reset:
-	./scripts/reset.sh ${LATEST_RATOOLS_VERSION}
+	./scripts/reset.sh ${MANUAL_BUILD_RATOOLS_VERSION}
 
 modify:
-	./scripts/modify.sh ${SOURCE_FRAMEWORK} ${TARGET_FRAMEWORK}
+	./scripts/modify.sh ${MANUAL_BUILD_DOTNET_SOURCE_VERSION} ${DOTNET_VERSION}
 
 run: reset modify
 	dotnet run --project RATools/Source/rascript-cli/rascript-cli.csproj
@@ -27,19 +28,19 @@ bundle:
 	./scripts/bundle.sh net10.0 ${DOTNET_VERSION} v1.17.0
 
 build-linux-x64:
-	./scripts/build.sh linux-x64 ${SOURCE_FRAMEWORK} ${TARGET_FRAMEWORK} ${LATEST_RATOOLS_VERSION}
+	./scripts/build.sh linux-x64 ${MANUAL_BUILD_DOTNET_SOURCE_VERSION} ${DOTNET_VERSION} ${MANUAL_BUILD_RATOOLS_VERSION}
 
 build-win-x86:
-	./scripts/build.sh win-x86 ${SOURCE_FRAMEWORK} ${TARGET_FRAMEWORK} ${LATEST_RATOOLS_VERSION}
+	./scripts/build.sh win-x86 ${MANUAL_BUILD_DOTNET_SOURCE_VERSION} ${DOTNET_VERSION} ${MANUAL_BUILD_RATOOLS_VERSION}
 
 build-win-x64:
-	./scripts/build.sh win-x64 ${SOURCE_FRAMEWORK} ${TARGET_FRAMEWORK} ${LATEST_RATOOLS_VERSION}
+	./scripts/build.sh win-x64 ${MANUAL_BUILD_DOTNET_SOURCE_VERSION} ${DOTNET_VERSION} ${MANUAL_BUILD_RATOOLS_VERSION}
 
 build-win-arm64:
-	./scripts/build.sh win-arm64 ${SOURCE_FRAMEWORK} ${TARGET_FRAMEWORK} ${LATEST_RATOOLS_VERSION}
+	./scripts/build.sh win-arm64 ${MANUAL_BUILD_DOTNET_SOURCE_VERSION} ${DOTNET_VERSION} ${MANUAL_BUILD_RATOOLS_VERSION}
 
 build-osx-x64:
-	./scripts/build.sh osx-x64 ${SOURCE_FRAMEWORK} ${TARGET_FRAMEWORK} ${LATEST_RATOOLS_VERSION}
+	./scripts/build.sh osx-x64 ${MANUAL_BUILD_DOTNET_SOURCE_VERSION} ${DOTNET_VERSION} ${MANUAL_BUILD_RATOOLS_VERSION}
 
 build-osx-arm64:
-	./scripts/build.sh osx-arm64 ${SOURCE_FRAMEWORK} ${TARGET_FRAMEWORK} ${LATEST_RATOOLS_VERSION}
+	./scripts/build.sh osx-arm64 ${MANUAL_BUILD_DOTNET_SOURCE_VERSION} ${DOTNET_VERSION} ${MANUAL_BUILD_RATOOLS_VERSION}
