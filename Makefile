@@ -1,7 +1,7 @@
 SHELL := /bin/bash
 
 ## Manual build vars
-MANUAL_BUILD_RATOOLS_VERSION := tags/v1.17.0
+MANUAL_BUILD_RATOOLS_VERSION := tags/v1.17.1
 MANUAL_BUILD_DOTNET_VERSION := net10.0
 
 reset:
@@ -25,6 +25,7 @@ bundle:
 	./scripts/bundle.sh net6.0 v1.16.1
 	./scripts/bundle.sh net6.0 v1.16.2
 	./scripts/bundle.sh net10.0 v1.17.0
+	./scripts/bundle.sh net10.0 v1.17.1
 
 build-linux-x64:
 	./scripts/build.sh linux-x64 ${MANUAL_BUILD_DOTNET_VERSION} ${MANUAL_BUILD_RATOOLS_VERSION}

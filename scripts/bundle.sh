@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if [[ $2 != @(v1.13.0|v1.14.0|v1.14.1|v1.15.0|v1.15.1|v1.15.2|v1.16.0|v1.16.1|v1.16.2|v1.17.0) ]]; then # RATools Version
+if [[ $2 != @(v1.13.0|v1.14.0|v1.14.1|v1.15.0|v1.15.1|v1.15.2|v1.16.0|v1.16.1|v1.16.2|v1.17.0|v1.17.1) ]]; then # RATools Version
     echo "Invalid RATools Version: $2"
     exit 1
 fi
